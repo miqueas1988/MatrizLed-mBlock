@@ -1,0 +1,146 @@
+{   
+   "extensionName": "MatrizLed",
+   "description": "Extensión de mBlock para Matriz LED 8x8 (MAX7219/MAX7221)",
+   "version": "1.0",
+   "author": "Miqueas Fortes (miqueas@digitalcodesign.com)",
+   "homepage": "https://github.com/miqueas1988/MatrizLed-mBlock",
+   "sort":0,
+   "javascriptURL":"",
+   "firmware":"1.0",
+   "extensionPort":0,
+   "blockSpecs": [
+      [
+         "w",
+         "Configurar: DIN %n  CLK %n  CS %n  NM %n",
+         "initLED",
+         "12",
+         "11",
+         "10",
+		 "1",
+         {
+            "setup":"pantalla.begin({0},{1},{2},{3});   // dataPin, clkPin, csPin, número de matrices 8x8\n",
+            "inc":"#include \"MatrizLed.h\"\n",
+			"def":"MatrizLed pantalla;\n",
+            "work":"",
+            "loop":""
+         }
+      ],	  
+	  [
+		 "w",
+		 "mostrar frase %s  velocidad %n",
+		 "texto",
+		 "texto",
+		 "50",
+		 {
+			"setup":"",
+            "inc":"",
+            "def":"",
+            "work":"pantalla.escribirFraseScroll({0}, {1});    // Muestra una frase que se desplaza a X milisegundos entre frames\n",
+            "loop":""
+		 }
+	  ],
+	  [
+		 "w",
+		 "mostrar cifra %n",
+		 "cifra",
+		 "0",
+		 {
+			"setup":"",
+            "inc":"",
+            "def":"",
+            "work":"pantalla.escribirCifra({0});    // Muestra un número por pantalla\n",
+            "loop":""
+		 }
+	  ],
+	  [
+		 "w",
+		 "mostrar dos letras %s",
+		 "letras",
+		 "OK",
+		 {
+			"setup":"",
+            "inc":"",
+            "def":"",
+            "work":"pantalla.escribirFrase({0});    // Muestra una palabra de dos letras\n",
+            "loop":""
+		 }
+	  ],
+	  [
+		 "w",
+		 "led matriz nº %n  fila %n  columna %n  estado %d.status",
+		 "encenderLed",
+		 "0",
+		 "0",
+		 "0",
+		 "on",
+		 {
+			"setup":"",
+            "inc":"",
+            "def":"",
+            "work":"pantalla.setLed({0}, {1}, {2}, {3});    // Enciende un Led de la matriz. Indica número de matriz (empezando por 0), fila, columna, estado\n",
+            "loop":""
+		 }
+	  ],
+	  [
+		 "w",
+		 "brillo %n",
+		 "brillo",
+		 "0",
+		 {
+			"setup":"",
+            "inc":"",
+            "def":"",
+            "work":"pantalla.setIntensidad({0});    // Brillo de pantalla entre 0 y 15\n",
+            "loop":""
+		 }
+	  ],
+	  [
+		 "w",
+		 "encender pantalla",
+		 "encender",
+		 {
+			"setup":"",
+            "inc":"",
+            "def":"",
+            "work":"pantalla.encender();    // Enciende la pantalla\n",
+            "loop":""
+		 }
+	  ],
+	  [
+		 "w",
+		 "apagar pantalla",
+		 "apagar",
+		 {
+			"setup":"",
+            "inc":"",
+            "def":"",
+            "work":"pantalla.apagar();    // Apaga la pantalla\n",
+            "loop":""
+		 }
+	  ],
+	  [
+		 "w",
+		 "borrar pantalla",
+		 "borrar",
+		 {
+			"setup":"",
+            "inc":"",
+            "def":"",
+            "work":"pantalla.borrar();    // Borrar contenido de la pantalla\n",
+            "loop":""
+		 }
+	  ],
+		  
+   ],
+   "menus": {
+      "status": ["on","off"]
+   },
+   "values":{
+      "on":true,
+      "off":false
+   },
+   "translators":{
+      "nl_NL": {
+      }
+   }
+}
