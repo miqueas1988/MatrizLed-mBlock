@@ -1,5 +1,5 @@
 # MatrizLed-mBlock
-MatrizLed (versión mBlock) es una extensión para [mBlock] (http://www.mblock.cc) para matrices de leds de 8x8 con controladores MAX7219 o MAX7221. Esta extensión emplea la libreria [MatrizLed](https://github.com/danidask/MatrizLed) para Arduino(http://arduino.cc) que a su vez está basada en la libreria [LedControl](https://github.com/wayoda/LedControl)
+MatrizLed (versión mBlock) es una extensión para [mBlock](http://www.mblock.cc) para matrices de leds de 8x8 con controladores MAX7219 o MAX7221. Esta extensión emplea la libreria [MatrizLed](https://github.com/danidask/MatrizLed) para [Arduino](http://arduino.cc) que a su vez está basada en la libreria [LedControl](https://github.com/wayoda/LedControl)
 
 Descargar
 ----------
